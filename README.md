@@ -7,6 +7,21 @@
 Vue + Vue Router + ElementUI + Axios 
 ### 后端
 MySQL+Springboot + Mybatis
+## 部分页面展示
+### 登录
+![image](https://github.com/LaoHuSongzi/xm-secondhand/blob/master/xm-secondhand/files/loginPage.png)
+### 用户界面
+![image](https://github.com/LaoHuSongzi/xm-secondhand/blob/master/xm-secondhand/files/frontEndhome.png)
+### 商品详情
+![image](https://github.com/LaoHuSongzi/xm-secondhand/blob/master/xm-secondhand/files/Buy.png)
+### 沙箱支付
+![image](https://github.com/LaoHuSongzi/xm-secondhand/blob/master/xm-secondhand/files/shaxiang.png)
+### 私聊
+![image](https://github.com/LaoHuSongzi/xm-secondhand/blob/master/xm-secondhand/files/chat.png)
+### 管理员界面
+![image](https://github.com/LaoHuSongzi/xm-secondhand/blob/master/xm-secondhand/files/backEndhome.png)
+### 管理列表
+![image](https://github.com/LaoHuSongzi/xm-secondhand/blob/master/xm-secondhand/files/backEnd.png)
 ## 项目亮点
 使用Echarts实时多维度统计销售数据  
 采用了WebSocket实现在线聊天室，确保在线聊天室的连接稳定性和可靠性  
