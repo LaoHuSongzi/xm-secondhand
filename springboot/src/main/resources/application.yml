@@ -1,0 +1,38 @@
+server:
+  port: 9090
+
+# 数据库配置
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root   #你本地的数据库用户名
+    password: 123456 #你本地的数据库密码
+    url: jdbc:mysql://localhost:3306/xm-secondhand?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&useSSL=false&serverTimezone=GMT%2b8&allowPublicKeyRetrieval=true
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
+
+# 配置mybatis实体和xml映射
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.example.entity
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true
+
+# 分页
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+  params: count=countSql
+
+ip: localhost
+
+#支付宝沙箱支付
+alipay:
+  appId: 9021000136605670
+  appPrivateKey: MIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQDsTWBsX6+x1yNeYkhPwPQQZ2awAFH3ISe2CdAwkNy1ET45KWXJwP0ssrdG39ywnEj6UXPE9ysUO8v593OjeOORigEc4rk7MkCsrZLDAcufjfj6CKgDWN+2a9ZxZEHb6iFkzdeFqsw8vkfDTBvpHgYIajyFDXgdDxKuUO/w/e8iQ07io6xQiPDHKxIDAziob2rSzZyMXWo6o6wKFEnEZPCTDn6X62euoheGFvV8qun+F+fIa01HOPXQm1UuvzLl45zc6whyPVxluRSl2MFITJ+Y0rtTDhnZAS30QS0rewPX62CmvXHOkcysf8ugcWcf/ySd0WpALKt0g4/R7YP7+kp/AgMBAAECggEAXhInsr0dCqVk9SwXMXjVMLqZTLOz7bgLQRMDCHKDCqpEpSjv1rO3llXHVLXF+6EcBFrsxZrIUZPEjkyOgqObpNLVwpQXvZMx4AxxgqRyVaCFX7SWfk6hMNQZWKba+RtqE+FGTXZDPGNb2kmwSsujBzKTyTwldxwLCc461yugSXjSUt6kQ5HE7ZJjx8/cvuwTO+Zzji2cCoTEx4kwZ/7lAZ9tn0il8E4Fj54Vlj89iWFnWbCNI5emNAkpy8pasU1QmTTkr90uZr/ppEuLlhx6vn4pAvbShJyY8QSPRLUQCLg7X3/BuJZlaBrzCd0JvlPTVjrBsSNEaWY+A05XBbplQQKBgQD5npzSD3VUR7W9h2SJ7+mvA1cLG3AWpxX/zsplr2eTGifhuIBCYslnAOtQSUSijWar1vZKPE+fwLxyVabCnmY1wZulVO7Oe5eYVwFI8nQAkYh/u5wjYMggHngetj9KVpxeRaDNnv+sclr/aR6kG8uV6p63bN498sMMdAQLSx677wKBgQDyV58+jWU+bNJlKWCp+85ruTtY250FeFiYgZBX0KAPngagpzs2AcPKd5gJ3t6FDf36WQkW3KEj3a1+Q4RZKkTisiXm+5zzfbP6S2BK2XJUn3fYPfCkqUDUZfh3VnqI9N+8+Havhnxr38okOTTbq70qtpeWlkPfz/LgBJkWNw4KcQKBgAr+Bx3g/GO3vLMZ8T15ySqh1QVyMd9tgDSBoLwVm1QJBNSV0WAbBY95pOMmNtWJsInEr5fZTBBW5nWKfAt5+jpHyljfgpypKKXWvwG9W4pi3kXxtxB/xJBVhyijEepuIfiszEYByHSJnKQ+ttC3QKHbcR3Wt3q25Av6V+s/ZZ0VAoGAQs7bDLCIL6xqWA8PIe1UG6hl7vokEIT7z5cwRrUx2vxSkWlozluwMRnFJTt2lrGjyadP9Sh/l9ad5IgSbU5UzTYVctb8jrehrSeodRn7Bc8sh8WTmKE8SRGPbL6/axAuufa5KWxm0opQPKo0ozZ2INdTdOUZ8xJtv0olNdWZnlECgYBzDqO/16qzbSchlEIq9Jir0OYX8L7tTRPLneK3n+WB0XfE5hax2U1fbq0llAplpJim3Ope5FshSfia2UCoISoSG6zNIZSb7SWY8tPfnbxWzidUt4+S7MNYK0cNcsE4e6I25nspwRcKHMqm2qLn8bbKkiNXdFYDF22lMPMdTadhiw==
+  alipayPublicKey: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAuMTumFV9pjgQZGttYJxTyQlBY4czNoUjPoTVizLCMDVL/sxpaauM9UNBiXVMdyPo9QILO9KnPMhiYnOSBgDSoXl7S3LUBdU4IYid0Uf8waHHwghMdm28nQfSp7b96q7LtDJNB4VrOn5gQfXl+CNABt7QRl7w+ihMUYUAPDkT/eLTInmEa50OLiL+KhZzmfFfYkvgvGFTZUYNkxQFkaJYBV2oTa6tBSpTdudB6ubBIo26wtpyrlk6zoKlMi2Qfd7HSJKK/suSdD/RxVrLqd7zl7W3WhRLEatqQufYU1fGMnHcEeHFwQBRto3F1fQHayohTBbgrNgE1EvYJnGkfFoZzwIDAQAB
+  notifyUrl: http://exvcib.natappfree.cc/alipay/notify
